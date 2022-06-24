@@ -67,8 +67,13 @@ h2 {
   padding: var(--default-gap);
 }
 
+
+input[type=button] {
+  transition-duration: 0.2s;
+}
+
 input[type=button],select {
-  background-color: #49b055; /* Green */
+  background-color: #49b055;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -76,4 +81,14 @@ input[type=button],select {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+input[type=button]:hover{
+  background-color: #75d580; /* Green */
+  color: white;
+}
+
+input[type=button]:disabled{
+  background-color: #c0c0c0;
+  color: rgb(123, 123, 123);
 }
