@@ -1,82 +1,56 @@
-<html>
-  <head>
-    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
-    <script src="buffer_to_wav.js"></script>
-    <script src="rave.js"></script>
-    <title>RAVE.js - online timbre transfer with RAVE</title>
-    <link rel="icon" href="favicon.png" />
-    <meta
-      property="og:title"
-      content="RAVE.js - online timbre transfer with RAVE"
-    />
-    <meta
-      property="og:url"
-      content="https://caillonantoine.github.io/ravejs/"
-    />
-    <meta
-      property="og:image"
-      content="https://caillonantoine.github.io/ravejs/rave_card.jpg"
-    />
-    <meta
-      property="og:description"
-      content="Online timbre transfer using RAVE: a Realtime Audio Variational autoEncoder. This application uses onnx.js to process audio files right in your browser!"
-    />
-    <meta property="og:type" content="website" />
-  </head>
-  <body>
-    <img src="rave_cropped.png" height="100px" />
-    <h3>Select a source</h3>
-    <input type="button" value="Load default sample" onclick="loadCantina();" />
-    <br />
-    <input
-      type="file"
-      id="audio-file"
-      accept="audio/mpeg, audio/ogg, audio/*"
-    />
-    <input
-      type="button"
-      value="Load a local file"
-      onclick="loadUploadedFile();"
-    />
-    <br />
-    <input
-      id="record-button"
-      type="button"
-      value="Record from microphone"
-      onclick="toogleRecording();"
-    />
-    <h3>Audio transfer</h3>
-    Select your model :
-    <select name="Model" id="model">
-      <option value="models/darbouka.onnx">Darbouka</option>
-    </select>
-    <br />
-    <input
-      id="play_input"
-      type="button"
-      value="Play input"
-      onclick="playInput();"
-      disabled="true"
-    />
-    <input
-      id="ravify_button"
-      type="button"
-      value="Transfer"
-      onclick="transfer();"
-      disabled="true"
-    />
-    <input
-      id="play_output"
-      type="button"
-      value="Play output"
-      onclick="playOutput();"
-      disabled="true"
-    />
-    <a id="download_link" href=""></a>
-    <br />
-    <p>
-      We do not store any of your data, everything is processed locally on your
-      computer!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <script src="buffer_to_wav.js"></script>
+  <script src="rave.js"></script>
+  <title>RAVE.js - RAVE online timbre transfer</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="favicon.png" />
+  <meta property="og:title" content="RAVE.js - online timbre transfer with RAVE" />
+  <meta property="og:url" content="https://caillonantoine.github.io/ravejs/" />
+  <meta property="og:image" content="https://caillonantoine.github.io/ravejs/rave_card.jpg" />
+  <meta property="og:description" content="Online timbre transfer using RAVE: a Realtime Audio Variational autoEncoder. This application uses onnx.js to process audio files right in your browser!" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+
+  <div class="content">
+
+    <img src="rave_cropped.png" height="100px" flex-grow="7" />
+
+    <div class="section">
+      <h2>I - Audio source selection</h2>
+      <input type="button" value="Load default sample" onclick="loadCantina();" />
+      <div class="group">
+        <input type="file" id="audio-file" accept="audio/mpeg, audio/ogg, audio/*" />
+        <input type="button" value="Load" onclick="loadUploadedFile();" />
+      </div>
+      <input id="record-button" type="button" value="Record from microphone" onclick="toogleRecording();" />
+    </div>
+
+    <div class="section">
+      <h2>II - Audio transfer</h2>
+      Select model :
+      <select name="Model" id="model">
+        <option value="models/darbouka.onnx">Darbouka</option>
+      </select>
+
+      <div class="flexRow">
+        <input id="play_input" type="button" value="Play input" onclick="playInput();" disabled="true" />
+        <input id="ravify_button" type="button" value="Transfer" onclick="transfer();" disabled="true" />
+        <input id="play_output" type="button" value="Play output" onclick="playOutput();" disabled="true" />
+        <a id="download_link" href=""></a>
+      </div>
+    </div>
+    <p class="info">
+      * We do not store any of your data, everything is processed locally on your
+      computer !
     </p>
-  </body>
+  </div>
+
+</body>
+
 </html>

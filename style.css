@@ -1,0 +1,68 @@
+:root {
+  --default-gap: 10px;
+  --double-gap: 20px;
+  --bg-color: #f8f8f2;
+  --border-color: #6272a4;
+  --fg-color: #282a36;
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('Roboto-Light.ttf') format("truetype");
+}
+
+body {
+  font-family: 'Roboto-Light';
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+  padding-top: var(--default-gap);
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 0px;
+  margin-bottom: 15px;
+}
+
+.info {
+  font-size: 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 15px;
+  height: 90vh;
+}
+
+.section {
+  border-top: 15px dashed black;
+  padding: 30px;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--default-gap);
+}
+
+.flexRow {
+  display: flex;
+  gap: var(--default-gap);
+}
+
+.group {
+  border: 2px dashed black;
+  padding: var(--default-gap);
+}
