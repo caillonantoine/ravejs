@@ -1,7 +1,7 @@
 :root {
   --default-gap: 10px;
   --double-gap: 20px;
-  --bg-color: #f8f8f2;
+  --bg-color: #ffffff;
   --border-color: #6272a4;
   --fg-color: #282a36;
 }
@@ -73,7 +73,7 @@ input[type=button] {
 }
 
 input[type=button],select {
-  background-color: #49b055;
+  background-color: #890010;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -84,7 +84,7 @@ input[type=button],select {
 }
 
 input[type=button]:hover{
-  background-color: #75d580; /* Green */
+  background-color: #c60017; /* Green */
   color: white;
 }
 
