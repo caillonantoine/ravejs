@@ -84,7 +84,7 @@ const loadCantina = async () => {
   let ravifyButton = document.getElementById("ravify_button");
   playButton.disabled = true;
 
-  let buffer = await urlToBuffer("/ravejs/cantina.wav");
+  let buffer = await urlToBuffer("/ravejs/default.mp3");
   buffer = tensorToBuffer(bufferToTensor(buffer));
   inputBuffer = buffer;
   playButton.disabled = false;
